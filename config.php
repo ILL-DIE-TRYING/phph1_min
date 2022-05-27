@@ -3,7 +3,7 @@
 * This file contains all the settings required to invoke the PHPH1 class
 * The config.php should be included in your project (or the settings in your project's configuration file) before invoking the PHPH1 class
 *
-* Be sure to look below the doc block in the inc/config.php settings for examples.
+* Be sure to look at the commenting in the this file for more information.
 *
 * Settings:
 *
