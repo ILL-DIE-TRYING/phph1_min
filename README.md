@@ -63,9 +63,9 @@ When running the hmyv2_ methods, data is returned in a JSON encoded format.
 - You can decode the data by passing the PHP object off to javascript. This is the recommended way and performs seemingly well with large data returns.
 
 ```
-<div>
 <p id="block_hash">Loading</p>
-</div>
+<p id="block_epoch">Loading</p>
+
 <?php
 // Include the config and class
 include('config.php');
