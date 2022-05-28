@@ -62,7 +62,7 @@ class phph1{
 	/** @var string $network This sets the network currently being used for the API calls during __construct and is one from the $phph1_apiaddresses array set in config.php. example "mainnet" */
 	private string $network;
 	
-	//* @var integer $shard This is the index number of the shard from the $network array set during __construct. The shard MUST be defined in the <a href='https://phph1.saddlerockit.com/min/doc/files/config.html'>config.php</a> $phph1_apiaddresses array. example: If 'mainnet' were selected for $network and we wanted to use shard 0, the value for this would be 0.
+	//* @var integer $shard This is the index number of the shard from the $network array set during __construct. The shard MUST be defined in the <a href='https://phph1.app/doc-min/files/config.html'>config.php</a> $phph1_apiaddresses array. example: If 'mainnet' were selected for $network and we wanted to use shard 0, the value for this would be 0.
 	private int $shard;
 	
 	/** @var array $phph1_apiaddresses This is set during _construct when the class is invoked and is defined in config.php. This is a multi-dimensional array that holds the node and shard information. */
@@ -71,7 +71,7 @@ class phph1{
 	/**
 	* The __construct function is used to set PHPH1 configurations settings when invoking the class. The parameters are all REQUIRED when invoking the class
 	*
-	* @param array $phph1_apiaddresses This is set in <a href='https://phph1.saddlerockit.com/min/doc/files/config.html'>config.php</a> and is an array of arrays, each array item is the network "name" such as "mainnet" and is an array itself of addresses used as shards for that network. For example $phph1_apiaddresses['mainnet'][0] would be an address for shard 0 on the mainnet network.
+	* @param array $phph1_apiaddresses This is set in <a href='https://phph1.app/doc-min/files/config.html'>config.php</a> and is an array of arrays, each array item is the network "name" such as "mainnet" and is an array itself of addresses used as shards for that network. For example $phph1_apiaddresses['mainnet'][0] would be an address for shard 0 on the mainnet network.
 	*
 	* @param integer $max_pagesize This sets the maximum number of return items per page on API calls that return multiple pages of data in the explorer or your project. This is helpful in preventing huge return data sets which could present a heavy load on the web server or the web servers data throughput.
 	*
@@ -79,7 +79,7 @@ class phph1{
 	*
 	* @param string $network This sets the network currently being used for the API calls and is one from the $phph1_apiaddresses array set in config.php. example "mainnet"
 	*
-	* @param integer $shard This is the index number of the shard from the $network array. The shard MUST be defined in the <a href='https://phph1.saddlerockit.com/min/doc/files/config.html'>config.php</a> $phph1_apiaddresses array. example: If 'mainnet' were selected for $network above and we wanted to use chard 0, the value for this would be 0.
+	* @param integer $shard This is the index number of the shard from the $network array. The shard MUST be defined in the <a href='https://phph1.app/doc-min/files/config.html'>config.php</a> $phph1_apiaddresses array. example: If 'mainnet' were selected for $network above and we wanted to use chard 0, the value for this would be 0.
 	*
 	* @return void
 	*
@@ -240,7 +240,7 @@ class phph1{
 	/**
 	* hmyv2_call() Executes a new message call immediately, without creating a transaction on the block chain. The hmyv2_call method can be used to query internal contract state, to execute validations coded into a contract or even to test what the effect of a transaction would be without running it live.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_call'>Explorer method page</a> or <a href='https://api.hmny.io/#d34b1f82-9b29-4b68-bac7-52fa0a8884b1'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_call'>Explorer method page</a> or <a href='https://api.hmny.io/#d34b1f82-9b29-4b68-bac7-52fa0a8884b1'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $scaddress The ETH address the transaction was sent to
 	* @param string $from The ETH address the transaction was sent from (optional)
@@ -324,7 +324,7 @@ class phph1{
 	/**
 	* hmyv2_estimateGas() Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_estimateGas'>Explorer method page</a> or <a href='https://api.hmny.io/#b9bbfe71-8127-4dda-b26c-ff95c4c22abd'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_estimateGas'>Explorer method page</a> or <a href='https://api.hmny.io/#b9bbfe71-8127-4dda-b26c-ff95c4c22abd'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $toaddr The ETH wallet address the transaction would be sent to (required)
 	* @param string $from The ETH wallet address the transaction would be sent from (optional)
@@ -401,7 +401,7 @@ class phph1{
 	* This method can be used to distinguish between contract addresses and wallet addresses.
 	* Will return contract code if it's a contract and nothing (0x) if it's a wallet
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCode'>Explorer method page</a> or <a href='https://api.hmny.io/#e13e9d78-9322-4dc8-8917-f2e721a8e556'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCode'>Explorer method page</a> or <a href='https://api.hmny.io/#e13e9d78-9322-4dc8-8917-f2e721a8e556'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $scaddress Smart contract address
 	*
@@ -448,7 +448,7 @@ class phph1{
 	* Returns the value from a storage position at a given address, or in other words,
 	* returns the state of the contract's storage, which may not be exposed via the contract's methods.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStorageAt'>Explorer method page</a> or <a href='https://api.hmny.io/#fa8ac8bd-952d-4149-968c-857ca76da43f'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStorageAt'>Explorer method page</a> or <a href='https://api.hmny.io/#fa8ac8bd-952d-4149-968c-857ca76da43f'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $scaddress Smart contract address
 	* @param string $stlocation Hex representation of storage location
@@ -508,7 +508,7 @@ class phph1{
 	/**
 	* Get delegations by delegator address
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getDelegationsByDelegator'>Explorer method page</a> or <a href='https://api.hmny.io/#454b032c-6072-4ecb-bf24-38b3d6d2af69'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getDelegationsByDelegator'>Explorer method page</a> or <a href='https://api.hmny.io/#454b032c-6072-4ecb-bf24-38b3d6d2af69'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $deladdr Delegator address
 	*
@@ -544,7 +544,7 @@ class phph1{
 	/**
 	* Get delegations using delegator address and block number
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getDelegationsByDelegatorByBlockNumber'>Explorer method page</a> or <a href='https://api.hmny.io/#8ce13bda-e768-47b9-9dbe-193aba410b0a'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getDelegationsByDelegatorByBlockNumber'>Explorer method page</a> or <a href='https://api.hmny.io/#8ce13bda-e768-47b9-9dbe-193aba410b0a'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $deladdr Delegator address
 	* @param string $blocknum Block Number
@@ -590,7 +590,7 @@ class phph1{
 	/**
 	* Get delegations using validator address
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getDelegationsByDelegatorByBlockNumber'>Explorer method page</a> or <a href='https://api.hmny.io/#2e02d8db-8fec-41d9-a672-2c9862f63f39'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getDelegationsByDelegatorByBlockNumber'>Explorer method page</a> or <a href='https://api.hmny.io/#2e02d8db-8fec-41d9-a672-2c9862f63f39'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $oneaddr Validator wallet address. This is validated in boot.php
 	*
@@ -630,7 +630,7 @@ class phph1{
 	/**
 	* Gets a list of wallet addresses that have created validators on the network.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getAllValidatorAddresses'>Explorer method page</a> or <a href='https://api.hmny.io/#69b93657-8d3c-4d20-9c9f-e51f08c9b3f5'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getAllValidatorAddresses'>Explorer method page</a> or <a href='https://api.hmny.io/#69b93657-8d3c-4d20-9c9f-e51f08c9b3f5'>Harmony API Documentation</a> for output details.
 	*
 	* @return array List of wallet addresses that have created validators on the network. 
 	*/
@@ -644,7 +644,7 @@ class phph1{
 	/**
 	* Gets all information for all validators.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getAllValidatorInformation'>Explorer Method Page</a> or <a href='https://api.hmny.io/#df5f1631-7397-48e8-87b4-8dd873235b9c'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getAllValidatorInformation'>Explorer Method Page</a> or <a href='https://api.hmny.io/#df5f1631-7397-48e8-87b4-8dd873235b9c'>Harmony API Documentation</a> for output details.
 	*
 	* @param number $pagenum Page to request (page size is 100), -1 for all validators (needs to be added to explorer)
 	*
@@ -681,7 +681,7 @@ class phph1{
 	/**
 	* Get all validator information by block number
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getAllValidatorInformationByBlockNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#a229253f-ca76-4b9d-88f5-9fd96e40d583'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getAllValidatorInformationByBlockNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#a229253f-ca76-4b9d-88f5-9fd96e40d583'>Harmony API Documentation</a> for output details.
 	*
 	* @param number $page Page to request (page size is 100), -1 for all validators (needs to be added to explorer)
 	*
@@ -726,7 +726,7 @@ class phph1{
 	/**
 	* Get all elected Validator addresses
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getElectedValidatorAddresses'>Explorer Method Page</a> or <a href='https://api.hmny.io/#e90a6131-d67c-4110-96ef-b283d452632d'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getElectedValidatorAddresses'>Explorer Method Page</a> or <a href='https://api.hmny.io/#e90a6131-d67c-4110-96ef-b283d452632d'>Harmony API Documentation</a> for output details.
 	*
 	* @return array List of wallet addresses that are currently elected. 
 	*/
@@ -740,7 +740,7 @@ class phph1{
 	/**
 	* Get all information for a validator
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getValidatorInformation'>Explorer Method Page</a> or <a href='https://api.hmny.io/#659ad999-14ca-4498-8f74-08ed347cab49'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getValidatorInformation'>Explorer Method Page</a> or <a href='https://api.hmny.io/#659ad999-14ca-4498-8f74-08ed347cab49'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $valaddr The validator's wallet address
 	*
@@ -780,7 +780,7 @@ class phph1{
 	/**
 	* Retrieves the current utility metrics
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCurrentUtilityMetrics'>Explorer Method Page</a> or <a href='https://api.hmny.io/#78dd2d94-9ff1-4e0c-bbac-b4eec1cdf10b'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCurrentUtilityMetrics'>Explorer Method Page</a> or <a href='https://api.hmny.io/#78dd2d94-9ff1-4e0c-bbac-b4eec1cdf10b'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current utility metrics. 
 	*/
@@ -794,7 +794,7 @@ class phph1{
 	/**
 	* Retrieves the median raw stake snapshot
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getMedianRawStakeSnapshot'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bef93b3f-6763-4121-9c17-f0b0d9e5cc40'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getMedianRawStakeSnapshot'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bef93b3f-6763-4121-9c17-f0b0d9e5cc40'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current utility metrics. 
 	*/
@@ -808,7 +808,7 @@ class phph1{
 	/**
 	* Retrieves current network staking information
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStakingNetworkInfo'>Explorer Method Page</a> or <a href='https://api.hmny.io/#4a10fce0-2aa4-4583-bdcb-81ee0800993b'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStakingNetworkInfo'>Explorer Method Page</a> or <a href='https://api.hmny.io/#4a10fce0-2aa4-4583-bdcb-81ee0800993b'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current utility metrics. 
 	*/
@@ -822,7 +822,7 @@ class phph1{
 	/**
 	* Retrieves current super committee information
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getSuperCommittees'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8eef2fc4-92db-4610-a9cd-f7b75cfbd080'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getSuperCommittees'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8eef2fc4-92db-4610-a9cd-f7b75cfbd080'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current utility metrics. 
 	*/
@@ -844,7 +844,7 @@ class phph1{
 	/**
 	* Query the CX receipt hash on the receiving shard endpoint
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCXReceiptByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#3d6ad045-800d-4021-aeb5-30a0fbf724fe'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCXReceiptByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#3d6ad045-800d-4021-aeb5-30a0fbf724fe'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blockhash Cross shard receipt block hash
 	*
@@ -880,7 +880,7 @@ class phph1{
 	/**
 	* Retrieves a list of currently pending cross shard transaction receipts
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getPendingCXReceipts'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fe60070d-97b4-458d-9365-490b44c18851'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getPendingCXReceipts'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fe60070d-97b4-458d-9365-490b44c18851'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of currently pending cross shard transaction receipts. 
 	*/
@@ -894,7 +894,7 @@ class phph1{
 	/**
 	* Use this API call to resend the cross shard receipt to the receiving shard to re-process if the transaction did not pay out
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_resendCx'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fe60070d-97b4-458d-9365-490b44c18851'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_resendCx'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fe60070d-97b4-458d-9365-490b44c18851'>Harmony API Documentation</a> for output details.
 	*
 	* @return bool If cross shard receipt was successfully resent (true) or not (false)
 	*/
@@ -932,7 +932,7 @@ class phph1{
 	/**
 	* Retrieves current transaction pool stats
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getPoolStats'>Explorer Method Page</a> or <a href='https://api.hmny.io/#7c2b9395-8f5e-4eb5-a687-2f1be683d83e'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getPoolStats'>Explorer Method Page</a> or <a href='https://api.hmny.io/#7c2b9395-8f5e-4eb5-a687-2f1be683d83e'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current transaction pool stats. 
 	*/
@@ -946,7 +946,7 @@ class phph1{
 	/**
 	* Retrieves a list of currently pending staking transactions
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_pendingStakingTransactions'>Explorer Method Page</a> or <a href='https://api.hmny.io/#de0235e4-f4c9-4a69-b6d2-b77dc1ba7b12'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_pendingStakingTransactions'>Explorer Method Page</a> or <a href='https://api.hmny.io/#de0235e4-f4c9-4a69-b6d2-b77dc1ba7b12'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of currently pending staking transactions. 
 	*/
@@ -961,7 +961,7 @@ class phph1{
 	/**
 	* Retrieves a list of currently pending transactions
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_pendingTransactions'>Explorer Method Page</a> or <a href='https://api.hmny.io/#de6c4a12-fa42-44e8-972f-801bfde1dd18'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_pendingTransactions'>Explorer Method Page</a> or <a href='https://api.hmny.io/#de6c4a12-fa42-44e8-972f-801bfde1dd18'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of currently pending transactions. 
 	*/
@@ -979,7 +979,7 @@ class phph1{
 	/**
 	* Retrieves a list of transaction errors currently in the staking error sink
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCurrentStakingErrorSink'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bdd00e0f-2ba0-480e-b996-2ef13f10d75a'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCurrentStakingErrorSink'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bdd00e0f-2ba0-480e-b996-2ef13f10d75a'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current transaction errors in the staking error sink. 
 	*/
@@ -993,7 +993,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve a staking transaction info using block number and transaction index
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStakingTransactionByBlockNumberAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fb41d717-1645-4d3e-8071-6ce8e1b65dd3'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStakingTransactionByBlockNumberAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fb41d717-1645-4d3e-8071-6ce8e1b65dd3'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $blocknum Block number
 	*
@@ -1040,7 +1040,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve a staking transaction info using block hash and transaction index
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStakingTransactionByBlockHashAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#ba96cf61-61fe-464a-aa06-2803bb4b'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStakingTransactionByBlockHashAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#ba96cf61-61fe-464a-aa06-2803bb4b'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blockhash Block number
 	*
@@ -1089,7 +1089,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve a staking transaction info using the staking transaction hash (stkhash is validated in boot.php)
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStakingTransactionByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#296cb4d0-bce2-48e3-bab9-64c3734edd27'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStakingTransactionByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#296cb4d0-bce2-48e3-bab9-64c3734edd27'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $hash Staking transaction hash
 	*
@@ -1121,7 +1121,7 @@ class phph1{
 	/**
 	* Send a raw staking transaction using the hex representation of a signed staking transaction
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_sendRawStakingTransaction'>Explorer Method Page</a> or <a href='https://api.hmny.io/#e8c17fe9-e730-4c38-95b3-6f1a5b1b9401'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_sendRawStakingTransaction'>Explorer Method Page</a> or <a href='https://api.hmny.io/#e8c17fe9-e730-4c38-95b3-6f1a5b1b9401'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $transhex Hex representation of signed staking transaction
 	*
@@ -1158,7 +1158,7 @@ class phph1{
 	/**
 	* Retrieves a list of transaction errors currently in the transaction error sink
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCurrentTransactionErrorSink'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9aedbc22-6262-44b1-8276-cd8ae19fa600'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCurrentTransactionErrorSink'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9aedbc22-6262-44b1-8276-cd8ae19fa600'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Array of current errors in the transaction error sink. 
 	*/
@@ -1172,7 +1172,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve transaction info using block hash and transaction index (blockhash is validated in boot.php)
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTransactionByBlockHashAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#7c7e8d90-4984-4ebe-bb7e-d7adec167503'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTransactionByBlockHashAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#7c7e8d90-4984-4ebe-bb7e-d7adec167503'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blocknum Block blockhash
 	*
@@ -1220,7 +1220,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve transaction info using block number and transaction index
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTransactionByBlockNumberAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bcde8b1c-6ab9-4950-9835-3c7564e49c3e'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTransactionByBlockNumberAndIndex'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bcde8b1c-6ab9-4950-9835-3c7564e49c3e'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $blocknum Block number
 	*
@@ -1264,7 +1264,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve transaction info using the transaction hash
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTransactionByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#117e84f6-a0ec-444e-abe0-455701310389'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTransactionByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#117e84f6-a0ec-444e-abe0-455701310389'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $hash Transaction hash
 	*
@@ -1300,7 +1300,7 @@ class phph1{
 	/**
 	* Use this API call to retrieve transaction info using the transaction hash
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTransactionByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#117e84f6-a0ec-444e-abe0-455701310389'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTransactionByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#117e84f6-a0ec-444e-abe0-455701310389'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $transhash Transaction hash
 	*
@@ -1336,7 +1336,7 @@ class phph1{
 	/**
 	* Send a raw transaction using the hex representation of a signed transaction
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_sendRawTransaction'>Explorer Method Page</a> or <a href='https://api.hmny.io/#f40d124a-b897-4b7c-baf3-e0dedf8f40a0'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_sendRawTransaction'>Explorer Method Page</a> or <a href='https://api.hmny.io/#f40d124a-b897-4b7c-baf3-e0dedf8f40a0'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $transhex Hex representation of signed staking transaction
 	*
@@ -1379,7 +1379,7 @@ class phph1{
 	/**
 	* Get the current block number
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_blockNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#2602b6c4-a579-4b7c-bce8-85331e0db1a7'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_blockNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#2602b6c4-a579-4b7c-bce8-85331e0db1a7'>Harmony API Documentation</a> for output details.
 	*
 	* @return integer Current block number. 
 	*/
@@ -1393,7 +1393,7 @@ class phph1{
 	/**
 	* Get the current circulating supply of tokens in ONE
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCirculatingSupply'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8398e818-ac2d-4ad8-a3b4-a00927395044'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCirculatingSupply'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8398e818-ac2d-4ad8-a3b4-a00927395044'>Harmony API Documentation</a> for output details.
 	*
 	* @return integer Circulation supply of tokens in ONE. 
 	*/
@@ -1407,7 +1407,7 @@ class phph1{
 	/**
 	* Get the current epoch
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getEpoch'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8398e818-ac2d-4ad8-a3b4-a00927395044'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getEpoch'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8398e818-ac2d-4ad8-a3b4-a00927395044'>Harmony API Documentation</a> for output details.
 	*
 	* @return integer The current epoch. 
 	*/
@@ -1421,7 +1421,7 @@ class phph1{
 	/**
 	* Get the last block for a specified epoch
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_epochLastBlock'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bd63c3aa-44cb-4f7d-8db2-50fb17e29d05'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_epochLastBlock'>Explorer Method Page</a> or <a href='https://api.hmny.io/#bd63c3aa-44cb-4f7d-8db2-50fb17e29d05'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $epoch Epoch number
 	*
@@ -1457,7 +1457,7 @@ class phph1{
 	/**
 	* Get the current information on the last crosslinks
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getLastCrossLinks'>Explorer Method Page</a> or <a href='https://api.hmny.io/#4994cdf9-38c4-4b1d-90a8-290ddaa3040e'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getLastCrossLinks'>Explorer Method Page</a> or <a href='https://api.hmny.io/#4994cdf9-38c4-4b1d-90a8-290ddaa3040e'>Harmony API Documentation</a> for output details.
 	*
 	* @return array current information on the last crosslinks. 
 	*/
@@ -1471,7 +1471,7 @@ class phph1{
 	/**
 	* Get the wallet address of current leader
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getLeader'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8b08d18c-017b-4b44-a3c3-356f9c12dacd'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getLeader'>Explorer Method Page</a> or <a href='https://api.hmny.io/#8b08d18c-017b-4b44-a3c3-356f9c12dacd'>Harmony API Documentation</a> for output details.
 	*
 	* @return string Wallet address of current leader.
 	*/
@@ -1485,7 +1485,7 @@ class phph1{
 	/**
 	* Gets the current average gas price of transactions
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_gasPrice'>Explorer Method Page</a> or <a href='https://api.hmny.io/#1d53fd59-a89f-436c-a171-aec9d9623f48'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_gasPrice'>Explorer Method Page</a> or <a href='https://api.hmny.io/#1d53fd59-a89f-436c-a171-aec9d9623f48'>Harmony API Documentation</a> for output details.
 	*
 	* @return integer Current average gas price of transactions. 
 	*/
@@ -1499,7 +1499,7 @@ class phph1{
 	/**
 	* Get a list of all shards and their information
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getShardingStructure'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9669d49e-43c1-47d9-a3fd-e7786e5879df'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getShardingStructure'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9669d49e-43c1-47d9-a3fd-e7786e5879df'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Current shards on the network and their information. 
 	*/
@@ -1513,7 +1513,7 @@ class phph1{
 	/**
 	* Get the total number of pre-mined tokens
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTotalSupply'>Explorer Method Page</a> or <a href='https://api.hmny.io/#3dcea518-9e9a-4a20-84f4-c7a0817b2196'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTotalSupply'>Explorer Method Page</a> or <a href='https://api.hmny.io/#3dcea518-9e9a-4a20-84f4-c7a0817b2196'>Harmony API Documentation</a> for output details.
 	*
 	* @return integer Total number of pre-mined tokens. 
 	*/
@@ -1527,7 +1527,7 @@ class phph1{
 	/**
 	* Get validator information from epoch number
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getValidators'>Explorer Method Page</a> or <a href='https://api.hmny.io/#4dfe91ad-71fa-4c7d-83f3-d1c86a804da5'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getValidators'>Explorer Method Page</a> or <a href='https://api.hmny.io/#4dfe91ad-71fa-4c7d-83f3-d1c86a804da5'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $epoch Epoch number (default is epoch 1 or everything)
 	*
@@ -1563,7 +1563,7 @@ class phph1{
 	/**
 	* Get validator information from epoch number
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getValidatorKeys'>Explorer Method Page</a> or <a href='https://api.hmny.io/#1439b580-fa3c-4d44-a79d-303390997a8c'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getValidatorKeys'>Explorer Method Page</a> or <a href='https://api.hmny.io/#1439b580-fa3c-4d44-a79d-303390997a8c'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $epoch Epoch number (default is epoch 1 or everything)
 	*
@@ -1603,7 +1603,7 @@ class phph1{
 	/**
 	* Gets a list of bad blocks in node memory
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getCurrentBadBlocks'>Explorer Method Page</a> or <a href='https://api.hmny.io/#0ba3c7b6-6aa9-46b8-9c84-f8782e935951'>Harmony API Documentation</a> for output details. NOTE: This method currently has known issues with the RPC not returning correctly.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getCurrentBadBlocks'>Explorer Method Page</a> or <a href='https://api.hmny.io/#0ba3c7b6-6aa9-46b8-9c84-f8782e935951'>Harmony API Documentation</a> for output details. NOTE: This method currently has known issues with the RPC not returning correctly.
 	*
 	* @return array List of bad blocks in node memory 
 	*/
@@ -1617,7 +1617,7 @@ class phph1{
 	/**
 	* Gets the current node metadata.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getNodeMetadata'>Explorer Method Page</a> or <a href='https://api.hmny.io/#03c39b56-8dfc-48ce-bdad-f85776dd8aec'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getNodeMetadata'>Explorer Method Page</a> or <a href='https://api.hmny.io/#03c39b56-8dfc-48ce-bdad-f85776dd8aec'>Harmony API Documentation</a> for output details.
 	*
 	* @return array List of bad blocks in node memory 
 	*/
@@ -1631,7 +1631,7 @@ class phph1{
 	/**
 	* Gets the current network protocol version.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_protocolVersion'>Explorer Method Page</a> or <a href='https://api.hmny.io/#cab9fcc2-e3cd-4bc9-b62a-13e4e046e2fd'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_protocolVersion'>Explorer Method Page</a> or <a href='https://api.hmny.io/#cab9fcc2-e3cd-4bc9-b62a-13e4e046e2fd'>Harmony API Documentation</a> for output details.
 	*
 	* @return number Protocol version
 	*/
@@ -1645,7 +1645,7 @@ class phph1{
 	/**
 	* Gets the current number of peers on the network in the form of a hex string.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=net_peerCount'>Explorer Method Page</a> or <a href='https://api.hmny.io/#09287e0b-5b61-4d18-a0f1-3afcfc3369c1'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=net_peerCount'>Explorer Method Page</a> or <a href='https://api.hmny.io/#09287e0b-5b61-4d18-a0f1-3afcfc3369c1'>Harmony API Documentation</a> for output details.
 	*
 	* @return number Protocol version in hex
 	*/
@@ -1665,7 +1665,7 @@ class phph1{
 	/**
 	* Gets block information on a series of blocks between two block numbers.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlocks'>Explorer Method Page</a> or <a href='https://api.hmny.io/#ab9bdc59-e482-436c-ab2f-10df215cd0bd'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlocks'>Explorer Method Page</a> or <a href='https://api.hmny.io/#ab9bdc59-e482-436c-ab2f-10df215cd0bd'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $strtblocknum Starting block number
 	*
@@ -1737,7 +1737,7 @@ class phph1{
 	/**
 	* Gets block information using the specified block number.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlockByNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#52f8a4ce-d357-46f1-83fd-d100989a8243'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlockByNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#52f8a4ce-d357-46f1-83fd-d100989a8243'>Harmony API Documentation</a> for output details.
 	*
 	* @param integer $blocknum Block number
 	*
@@ -1813,7 +1813,7 @@ class phph1{
 	/**
 	* Gets block information using the specified block hash.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlockByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#6a49ec47-1f74-4732-9f04-e5d76160bd5c'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlockByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#6a49ec47-1f74-4732-9f04-e5d76160bd5c'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blockhash Block hash
 	*
@@ -1889,7 +1889,7 @@ class phph1{
 	/**
 	* Gets a list of block signer wallet addresses using the specified block number.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlockSigners'>Explorer Method Page</a> or <a href='https://api.hmny.io/#1e4b5f41-9db6-4dea-92fb-4408db78e622'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlockSigners'>Explorer Method Page</a> or <a href='https://api.hmny.io/#1e4b5f41-9db6-4dea-92fb-4408db78e622'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blockhash Block number
 	*
@@ -1925,7 +1925,7 @@ class phph1{
 	/**
 	* Gets block signer BLS keys using the specified block number.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlockSignerKeys'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9f9c8298-1a4e-4901-beac-f34b59ed02f1'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlockSignerKeys'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9f9c8298-1a4e-4901-beac-f34b59ed02f1'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blocknum Block number
 	*
@@ -1961,7 +1961,7 @@ class phph1{
 	/**
 	* Gets the number of transactions in a block using the specified block number.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlockTransactionCountByNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#26c5adfb-d757-4595-9eb7-c6efef63df32'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlockTransactionCountByNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#26c5adfb-d757-4595-9eb7-c6efef63df32'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blocknum Block number
 	*
@@ -1997,7 +1997,7 @@ class phph1{
 	/**
 	* Gets the number of transactions in a block using the specified block hash.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBlockTransactionCountByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#66c68844-0208-49bb-a83b-08722bc113eb'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getBlockTransactionCountByHash'>Explorer Method Page</a> or <a href='https://api.hmny.io/#66c68844-0208-49bb-a83b-08722bc113eb'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blockhash Block hash
 	*
@@ -2033,7 +2033,7 @@ class phph1{
 	/**
 	* Gets the block header data for the specified block number.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getHeaderByNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#01148e4f-72bb-426d-a123-718a161eaec0'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getHeaderByNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#01148e4f-72bb-426d-a123-718a161eaec0'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $blocknum Block number
 	*
@@ -2069,7 +2069,7 @@ class phph1{
 	/**
 	* Gets a list of the latest beacon chain headers and their related information.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getLatestChainHeaders'>Explorer Method Page</a> or <a href='https://api.hmny.io/#7625493d-16bf-4611-8009-9635d063b4c0'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getLatestChainHeaders'>Explorer Method Page</a> or <a href='https://api.hmny.io/#7625493d-16bf-4611-8009-9635d063b4c0'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Chain header data
 	*/
@@ -2083,7 +2083,7 @@ class phph1{
 	/**
 	* Gets the current blockchain header information.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_latestHeader'>Explorer Method Page</a> or <a href='https://api.hmny.io/#73fc9b97-b048-4b85-8a93-4d2bf1da54a6'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_latestHeader'>Explorer Method Page</a> or <a href='https://api.hmny.io/#73fc9b97-b048-4b85-8a93-4d2bf1da54a6'>Harmony API Documentation</a> for output details.
 	*
 	* @return array Current blockchain header information
 	*/
@@ -2103,7 +2103,7 @@ class phph1{
 	*
 	* @param string $oneaddr The ONE address of the wallet
 	*
-	* @return number Current wallet balance in atto. See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBalance'>Explorer Method Page</a> or <a href='https://api.hmny.io/#da8901d2-d237-4c3b-9d7d-10af9def05c4'>Harmony API Documentation</a> for output details.
+	* @return number Current wallet balance in atto. See <a href='https://phph1.app/index.php?method=hmyv2_getBalance'>Explorer Method Page</a> or <a href='https://api.hmny.io/#da8901d2-d237-4c3b-9d7d-10af9def05c4'>Harmony API Documentation</a> for output details.
 	*/
 	function hmyv2_getBalance($oneaddr){
 		$method = "hmyv2_getBalance";
@@ -2135,7 +2135,7 @@ class phph1{
 	*
 	* @param number $blocknum The block number to get the wallet balance from
 	*
-	* @return number Current wallet balance in atto. See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getBalanceByBlockNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9aeae4b8-1a09-4ed2-956b-d7c96266dd33'>Harmony API Documentation</a> for output details.
+	* @return number Current wallet balance in atto. See <a href='https://phph1.app/index.php?method=hmyv2_getBalanceByBlockNumber'>Explorer Method Page</a> or <a href='https://api.hmny.io/#9aeae4b8-1a09-4ed2-956b-d7c96266dd33'>Harmony API Documentation</a> for output details.
 	*/
 	function hmyv2_getBalanceByBlockNumber($oneaddr, $blocknum){
 		$method = "hmyv2_getBalanceByBlockNumber";
@@ -2172,7 +2172,7 @@ class phph1{
 	/**
 	* Gets the number of staking transactions for the specified ONE wallet address.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStakingTransactionsCount'>Explorer Method Page</a> or <a href='https://api.hmny.io/#ddc1b029-f341-4c4d-ba19-74b528d6e5e5'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStakingTransactionsCount'>Explorer Method Page</a> or <a href='https://api.hmny.io/#ddc1b029-f341-4c4d-ba19-74b528d6e5e5'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $oneaddr The ONE address of the wallet
 	*
@@ -2220,7 +2220,7 @@ class phph1{
 	/**
 	* Gets staking transactions history for a specified ONE wallet.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getStakingTransactionsHistory'>Explorer Method Page</a> or <a href='https://api.hmny.io/#c5d25b36-57be-4e43-a23b-17ace350e322'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getStakingTransactionsHistory'>Explorer Method Page</a> or <a href='https://api.hmny.io/#c5d25b36-57be-4e43-a23b-17ace350e322'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $oneaddr The ONE address of the wallet
 	*
@@ -2319,7 +2319,7 @@ class phph1{
 	/**
 	* Gets the number of transactions for the specified ONE wallet address.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTransactionsCount'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fc97aed2-e65e-4cf4-bc01-8dadb76732c0'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTransactionsCount'>Explorer Method Page</a> or <a href='https://api.hmny.io/#fc97aed2-e65e-4cf4-bc01-8dadb76732c0'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $oneaddr The ONE address of the wallet
 	*
@@ -2367,7 +2367,7 @@ class phph1{
 	/**
 	* Gets transactions history for a specified ONE wallet.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_getTransactionsHistory'>Explorer Method Page</a> or <a href='https://api.hmny.io/#2200a088-81b5-4420-a291-312a7c6d880e'>Harmony API Documentation</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_getTransactionsHistory'>Explorer Method Page</a> or <a href='https://api.hmny.io/#2200a088-81b5-4420-a291-312a7c6d880e'>Harmony API Documentation</a> for output details.
 	*
 	* @param string $oneaddr The ONE address of the wallet
 	*
@@ -2463,7 +2463,7 @@ class phph1{
 	/**
 	* Gets whether specified ONE address is a block signer for a specified block number.
 	*
-	* See <a https://phph1.saddlerockit.com/min/doc/index.php?method=hmyv2_isBlockSigner'>Explorer Method Page</a> for output details.
+	* See <a href='https://phph1.app/index.php?method=hmyv2_isBlockSigner'>Explorer Method Page</a> for output details.
 	*
 	* @param string $oneaddr The ONE address of the validator
 	*
